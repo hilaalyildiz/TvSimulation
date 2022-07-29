@@ -20,6 +20,21 @@ public class Tv {
 
     }
 
+    private void kanalOlustur() {
+        HaberKanali cnn = new HaberKanali("CNN",1,"Genel Haber");
+        kanallar.add(cnn);
+
+        HaberKanali bein = new HaberKanali("BeinSpor",3,"Spor Haberi");
+        kanallar.add(bein);
+
+        MuzikKanali dreamTurk = new MuzikKanali("Dream Turk",2,"Yerli");
+        kanallar.add(dreamTurk);
+
+        MuzikKanali numberOne = new MuzikKanali("Number One",4,"Yabanci");
+        kanallar.add(numberOne);
+
+    }
+
     public void sesArttir(){
         if(ses<=20 && acik == true){
             ses++;
@@ -56,20 +71,6 @@ public class Tv {
         }
     }
 
-    private void kanalOlustur() {
-        HaberKanali cnn = new HaberKanali("CNN",1,"Genel Haber");
-        kanallar.add(cnn);
-
-        HaberKanali bein = new HaberKanali("BeinSpor",3,"Spor Haberi");
-        kanallar.add(bein);
-
-        MuzikKanali dreamTurk = new MuzikKanali("Dream Turk",2,"Yerli");
-        kanallar.add(dreamTurk);
-
-        MuzikKanali numberOne = new MuzikKanali("Number One",4,"Yabanci");
-        kanallar.add(numberOne);
-
-    }
 
     public String getMarka() {
         return marka;

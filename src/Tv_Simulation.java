@@ -32,18 +32,38 @@ public class Tv_Simulation {
                 case 7:
                     tvKapat();
                     break;
+
                 case 8:
                     menuGoster();
                     break;
+
                 case 0:
                     System.out.println("Sistemden cikiliyor");
                     cikis = true;
                     break;
+
                 default:
                     System.out.println("0 ile 8 arasinda bir deger giriniz");
                     break;
 
             }
+        }
+    }
+
+    private static void tvKurveKanallariOlustur() {
+
+        if (tv == null){
+            tara.nextLine();
+
+            System.out.println("Tv markasını giriniz:");
+            String marka = tara.nextLine();
+            System.out.println("Tv boyutunu giriniz:");
+            String boyut = tara.nextLine();
+
+            tv = new Tv(marka,boyut);
+            System.out.println(tv);
+        } else{
+            System.out.println(tv);
         }
     }
 
@@ -76,23 +96,6 @@ public class Tv_Simulation {
             tv.tvAc();
         }else {
             System.out.println("Once tv'yi kurun ve kanallari olusuturun");
-        }
-    }
-
-    private static void tvKurveKanallariOlustur() {
-
-        if (tv == null){
-            tara.nextLine();
-
-            System.out.println("Tv markasını giriniz:");
-            String marka = tara.nextLine();
-            System.out.println("Tv boyutunu giriniz:");
-            String boyut = tara.nextLine();
-
-            tv = new Tv(marka,boyut);
-            System.out.println(tv);
-        } else{
-            System.out.println(tv);
         }
     }
 
