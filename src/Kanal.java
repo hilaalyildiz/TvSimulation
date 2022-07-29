@@ -23,4 +23,7 @@ public class Kanal {
         this.kanalNo = kanalNo;
     }
 
+    public String kanalBilgisiGoster(){
+        return "Adi : " + adi+" numarasi : "+kanalNo;
+    }
 }

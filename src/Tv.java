@@ -5,19 +5,18 @@ public class Tv {
     private String boyut;
     private String marka;
     private ArrayList<Kanal> kanallar;
-
     private boolean acik;
-
     private int ses;
+    private int aktifKanal;
+
     public Tv(String marka,String boyut){
         this.marka = marka;
         this.boyut = boyut;
         ses =10;
-
+        aktifKanal=1;
         kanallar = new ArrayList<>();
         kanalOlustur();
         this.acik = false;
-
     }
 
     private void kanalOlustur() {
@@ -33,6 +32,31 @@ public class Tv {
         MuzikKanali numberOne = new MuzikKanali("Number One",4,"Yabanci");
         kanallar.add(numberOne);
 
+    }
+
+    public void aktifKanaliGoster(){
+        if (acik){
+            System.out.println("Aktif kanal : "+kanallar.get(aktifKanal).kanalBilgisiGoster());
+        }else{
+            System.out.println("Once tv'yi acin");
+        }
+
+    }
+    public void kanalDegistir(int istenenKanal){
+        if(acik){
+        if(istenenKanal!=aktifKanal){
+            if(istenenKanal<=kanallar.size() && istenenKanal>=0){
+                aktifKanal =istenenKanal;
+                System.out.println("Kanal :"+ istenenKanal+" Bilgi :"+kanallar.get(aktifKanal-1).kanalBilgisiGoster());
+            } else{
+                System.out.println("Gecerli bir kanal numarasi giriniz");
+            }
+        }else{
+        System.out.println("Zaten "+aktifKanal +" kanalındasınız");
+        }
+        }else{
+            System.out.println("Once tv'yi açın");
+        }
     }
 
     public void sesArttir(){

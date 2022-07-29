@@ -9,7 +9,7 @@ public class Tv_Simulation {
         menuGoster();
         boolean cikis = false;
 
-        while ((cikis == false )){
+        while (cikis == false){
             System.out.println("Seciminiz : Menuyu görmek için 8'i tuslayıın");
             int secim = tara.nextInt();
 
@@ -28,7 +28,14 @@ public class Tv_Simulation {
                 case 4:
                     sesAzalt();
                     break;
-
+                    
+                case 5:
+                    kanalDegistir();
+                    break;
+                case 6:
+                    kanalBilgisiGoster();
+                    break;
+                    
                 case 7:
                     tvKapat();
                     break;
@@ -47,6 +54,24 @@ public class Tv_Simulation {
                     break;
 
             }
+        }
+    }
+
+    private static void kanalBilgisiGoster() {
+        if(tv !=null){
+            tv.aktifKanaliGoster();
+        }else{
+            System.out.println("Once tv'yi kurun ve kanalları olusturun");
+        }
+    }
+
+    private static void kanalDegistir() {
+        if(tv !=null){
+            System.out.println("Hangi kanali görmek istiyorsunuz?\n");
+            int istenenKanal = tara.nextInt();
+            tv.kanalDegistir(istenenKanal);
+        }else{
+            System.out.println("Once tv'yi kurun ve kanalları olusturun");
         }
     }
 
